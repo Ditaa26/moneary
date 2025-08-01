@@ -1,0 +1,144 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #FFE3E3;
+  color: #8B0000;
+  padding-bottom: 70px;
+}
+
+header {
+  background-color: #FFCDCD;
+  padding: 15px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  height: 60px;
+  box-sizing: border-box;
+}
+
+.back-button {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #8B0000;
+  font-size: 24px;
+  text-decoration: none;
+  font-weight: bold;
+  z-index: 30;
+}
+
+.header-center {
+  flex: 1;
+  text-align: center;
+  font-weight: bold;
+  font-size: 10px;
+  color: #8B0000;
+}
+
+.logo-container {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 30;
+}
+
+.logo-container img {
+  width: 30px;
+  height: 30px;
+}
+
+.container {
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.card {
+  width: 100%;
+  background-color: #F9C2C2;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px;
+  font-weight: bold;
+  color: #8B0000;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+  box-sizing: border-box;
+  overflow: hidden;
+  word-break: break-word;
+}
+
+.card div:first-child {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+}
+
+.card-arrow {
+  color: #8B0000;
+  font-size: 20px;
+}
+
+.no-data-message {
+  text-align: center;
+  background-color: #F9C2C2;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin-top: 20px;
+  color: #8B0000;
+}
+
+/* Responsive Header */
+@media screen and (max-width: 480px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .title {
+    font-size: 18px;
+    text-align: left;
+    margin-top: 8px;
+  }
+
+  .logo {
+    position: static;
+    margin-top: 10px;
+  }
+
+  .logo-container {
+    width: 30px;
+    height: 30px;
+  }
+
+  .logo-container img {
+    width: 26px;
+    height: 26px;
+  }
+}

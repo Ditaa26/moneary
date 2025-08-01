@@ -1,0 +1,148 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #FFE3E3;
+  color: #9c1d1d;
+}
+
+.signup-page, .login-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.logo-box {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.logo {
+  width: 70px;
+  height: auto;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #980003;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.form-box {
+  background-color: #F5C6C6;
+  padding: 30px 20px;  /* 20px kanan kiri cukup */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box; /* Jaga padding agar tidak bikin nabrak container */
+}
+
+
+.form-box label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.form-box input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 18px;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  box-sizing: border-box;  /* PENTING agar padding tidak bikin lebar nabrak */
+}
+
+
+.submit-btn {
+  background-color: #AC4E5C;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 25px;
+  width: 100%;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.submit-btn:hover {
+  background-color: #AC4E5C;
+}
+
+.link {
+  text-align: right;
+  margin-top: 12px;
+}
+
+.link a {
+  color: #0056b3;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.link a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive untuk layar kecil */
+@media (max-width: 480px) {
+  .signup-page, .login-page {
+    padding: 30px 15px;
+  }
+
+  .container {
+    padding: 15px;
+  }
+
+  .logo {
+    width: 60px;
+    margin-bottom: 10px;
+  }
+
+  .title {
+    font-size: 20px;
+    margin-bottom: 25px;
+  }
+
+  .form-box {
+    padding: 20px 15px;
+  }
+
+  .form-box label {
+    font-size: 13px;
+  }
+
+  .form-box input {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .submit-btn {
+    padding: 10px;
+    font-size: 15px;
+  }
+
+  .link {
+    font-size: 13px;
+    text-align: center;
+  }
+
+  *, *::before, *::after {
+  box-sizing: border-box;
+}
+
+}

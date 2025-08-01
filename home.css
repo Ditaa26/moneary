@@ -1,0 +1,402 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+        
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background-color: #FFE3E3;
+    color: #8B0000;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+        
+.header {
+    background-color: #FFCDCD;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+        
+.profile-icon {
+    width: 40px;
+    height: 40px;
+    background-color: #8B0000;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+        
+.title-container {
+    text-align: center;
+    flex: 1;
+}
+        
+.title {
+    color: #8B0000;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 2px;
+}
+        
+.subtitle {
+    color: #8B0000;
+    font-size: 14px;
+    line-height: 1.2;
+    opacity: 0.8;
+}
+        
+.logo {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+}
+        
+.logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+        
+.welcome-card {
+    background-color: #F9C2C2;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+        
+.welcome-title {
+    color: #8B0000;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+        
+.summary-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 10px;
+    }
+        
+.summary-item {
+    font-size: 13px;
+    color: #8B0000;
+    text-align: center;
+    padding: 10px 5px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    line-height: 1.3;
+}
+        
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 30px 0 40px;
+    padding: 0 20px;
+}
+        
+.action-button {
+    width: 90px;
+    height: 90px;
+    background-color: #F9C2C2;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    cursor: pointer;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+        
+.action-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+        
+.button-icon {
+    font-size: 32px;
+    color: #8B0000;
+    margin-bottom: 8px;
+}
+        
+.action-button div:last-child {
+    font-size: 13px;
+    font-weight: 500;
+    color: #8B0000;
+}
+        
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #FFCDCD;
+    text-align: center;
+    padding: 12px 0;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
+    z-index: 100;
+}
+
+footer a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #8B0000;
+    text-decoration: none;
+}
+
+footer div {
+    font-size: 12px;
+    font-weight: 500;
+    margin-top: 4px;
+ }
+        
+/* Catatan selector dropdown styling */
+.catatan-selector {
+    margin: 15px;
+}
+        
+.catatan-selector form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #F9C2C2;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+        
+.catatan-selector label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #8B0000;
+    margin-bottom: 5px;
+}
+        
+.catatan-selector select {
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 10px;
+    border: 1px solid #FFCDCD;
+    background-color: #FFE3E3;
+    color: #8B0000;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238B0000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 1.2em;
+    padding-right: 45px;
+}
+        
+.catatan-selector button {
+    background-color: #A15363;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 15px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0 2px 6px rgba(139, 0, 0, 0.2);
+    transition: all 0.2s ease;
+}
+        
+.catatan-selector button:hover {
+    background-color: #8B0000;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(139, 0, 0, 0.3);
+}
+        
+ /* Add spacing at the bottom to account for fixed footer */
+.page-content {
+    padding-bottom: 80px;
+    min-height: calc(100vh - 80px);
+}
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+    .header {
+        padding: 12px 15px;
+    }
+            
+    .title {
+        font-size: 20px;
+    }
+            
+    .subtitle {
+        font-size: 12px;
+    }
+            
+    .welcome-card {
+        margin: 15px 10px;
+        padding: 18px;
+        border-radius: 12px;
+    }
+            
+    .welcome-title {
+        font-size: 16px;
+         margin-bottom: 12px;
+    }
+            
+    .summary-section {
+        gap: 10px;
+    }
+            
+    .summary-item {
+        font-size: 12px;
+        padding: 8px 4px;
+    }
+            
+    .action-buttons {
+        gap: 30px;
+        margin: 25px 0 35px;
+        padding: 0 15px;
+    }
+            
+    .action-button {
+        width: 80px;
+        height: 80px;
+        border-radius: 12px;
+    }
+            
+    .button-icon {
+        font-size: 28px;
+        margin-bottom: 6px;
+    }
+            
+    .action-button div:last-child {
+        font-size: 12px;
+    }
+            
+    .catatan-selector {
+        margin: 12px 10px;
+    }
+            
+    .catatan-selector form {
+        padding: 12px;
+        border-radius: 12px;
+    }
+            
+    .catatan-selector label {
+        font-size: 13px;
+    }
+            
+    .catatan-selector select {
+        padding: 10px 12px;
+        font-size: 13px;
+        padding-right: 40px;
+    }
+            
+    .catatan-selector button {
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+            
+    footer {
+        padding: 10px 0;
+    }
+            
+    footer div {
+        font-size: 11px;
+    }
+}
+
+/* Extra small devices (phones, 320px and down) */
+@media (max-width: 480px) {
+    .header {
+        padding: 10px 12px;
+    }
+            
+    .profile-icon, .logo {
+        width: 35px;
+        height: 35px;
+    }
+            
+    .title {
+        font-size: 18px;
+    }
+            
+    .subtitle {
+        font-size: 11px;
+    }
+            
+    .welcome-card {
+        margin: 12px 8px;
+        padding: 15px;
+    }
+            
+    .welcome-title {
+        font-size: 15px;
+    }
+            
+    .summary-item {
+        font-size: 11px;
+        padding: 6px 3px;
+    }
+            
+    .action-buttons {
+        gap: 25px;
+        margin: 20px 0 30px;
+    }
+            
+    .action-button {
+        width: 75px;
+        height: 75px;
+    }
+            
+    .button-icon {
+        font-size: 26px;
+    }
+            
+    .action-button div:last-child {
+        font-size: 11px;
+    }
+            
+    .catatan-selector {
+        margin: 10px 8px;
+    }
+            
+    .page-content {
+        padding-bottom: 75px;
+    }
+}
+
+/* Landscape orientation adjustments */
+@media (max-height: 600px) and (orientation: landscape) {
+    .action-buttons {
+         margin: 15px 0 25px;
+    }
+            
+    .welcome-card {
+        margin: 10px 15px;
+        padding: 15px;
+    }
+            
+    .page-content {
+        padding-bottom: 70px;
+    }
+}
+    

@@ -1,0 +1,166 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #FFE3E3;
+    color: #8B0000;
+    padding-bottom: 70px;
+}
+
+header {
+    background-color: #FFCDCD;
+    padding: 15px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    height: 60px;
+    box-sizing: border-box;
+}
+
+.back-button {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #8B0000;
+    font-size: 24px;
+    text-decoration: none;
+    font-weight: bold;
+    z-index: 30;
+}
+
+.header-center {
+    flex: 1;
+    text-align: center;
+    font-weight: bold;
+    font-size: 10px;
+    color: #8B0000;
+}
+
+.logo-container {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 30;
+}
+
+.logo-container img {
+    width: 30px;
+    height: 30px;
+}
+
+.profile-wrapper {
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.profile-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+    background-color: #D23A3A;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFE3E3;
+    font-size: 40px;
+}
+
+.profile-section {
+    margin-top: 30px;
+}
+
+.section-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #8B0000;
+    padding-bottom: 5px;
+}
+
+.info {
+    margin-top: 20px;
+}
+
+.info label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.info span {
+    font-weight: normal;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.logout-button {
+    margin-top: 30px;
+    padding: 10px 20px;
+    background-color: #8B0000;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    display: block;
+}
+
+.logout-button:hover {
+    background-color: #a00000;
+}
+
+@media screen and (max-width: 480px) {
+    header {
+        padding: 10px 20px;
+    }
+
+    .header-center h1 {
+        font-size: 14px;
+    }
+
+    .logo-container {
+        width: 30px;
+        height: 30px;
+    }
+
+    .logo-container img {
+        width: 26px;
+        height: 26px;
+    }
+
+    .section-title {
+        font-size: 16px;
+    }
+
+    .info label {
+        font-size: 14px;
+    }
+
+    .logout-button {
+        width: 100%;
+        font-size: 13px;
+    }
+
+    .profile-icon {
+        width: 70px;
+        height: 70px;
+        font-size: 36px;
+    }
+}
