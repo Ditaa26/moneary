@@ -27,8 +27,8 @@ if ($mode == 'update') {
     
     if ($resultCatatan->num_rows > 0) {
         $catatanData = $resultCatatan->fetch_assoc();
-        $namaCatatanValue = $catatanData['nama'];
-        $targetValue = $catatanData['target'];
+        $namaCatatanValue = $catatanData['nama_catatan'];
+        $targetValue = $catatanData['target_keuangan'];
     } else {
         // Jika catatan tidak ditemukan atau bukan milik pengguna ini, redirect
         header("Location: home.php");
