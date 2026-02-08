@@ -17,7 +17,7 @@ if ($result->num_rows > 0) {
     $sqlPengeluaran = "SELECT SUM(jumlah) as total FROM transaksi WHERE catatan_id = $id AND tipe = 'pengeluaran'";
     $pengeluaran = $conn->query($sqlPengeluaran)->fetch_assoc()['total'] ?? 0;
 
-    $target = $catatan['target'];
+    $target = $catatan['target_keuangan'];
     $progress = ($target > 0) ? max(0, min(100, ($pemasukan - $pengeluaran) / $target * 100)) : 0;
 } else {
     header("Location: home.php");
@@ -69,7 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="detail-card">
         <div class="detail-row">
             <div class="label">Nama catatan:</div>
-            <div class="value"><?= htmlspecialchars($catatan['nama']); ?></div>
+            <div class="value"><?= htmlspecialchars($catatan['nama_catatan']); ?></div>
         </div>
         <div class="detail-row">
             <div class="label">Pemasukan:</div>

@@ -10,8 +10,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    $stmt = $conn->prepare("SELECT id, nama, password FROM akun WHERE email = ?");
-    $stmt->bind_param("s", $email);
+   $stmt = $conn->prepare("SELECT id, nama, password FROM akun WHERE email = ?");
+
+if (!$stmt) {
+    die("Prepare error: " . $conn->error);
+}
+
+$stmt->bind_param("s", $email);
+
     $stmt->execute();
     $result = $stmt->get_result();
 
@@ -32,6 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
         $error = "Email tidak ditemukan.";
     }
+    
 }
 ?>
 

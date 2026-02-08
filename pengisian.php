@@ -70,10 +70,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
         } else {
             // Insert catatan baru
-            $sql = "INSERT INTO catatan (nama, tanggal_dibuat, target, akun_id) 
-                    VALUES (?, NOW(), ?, ?)";
-            $stmt = $conn->prepare($sql);
-            $stmt->bind_param("sii", $namaCatatan, $target, $user_id);
+           $sql = "INSERT INTO catatan (akun_id, nama_catatan, target_keuangan) 
+        VALUES (?, ?, ?)";
+                $stmt = $conn->prepare($sql);
+                $stmt->bind_param("isd", $user_id, $namaCatatan, $target);
+
 
             if ($stmt->execute()) {
                 $newCatatanId = $conn->insert_id;

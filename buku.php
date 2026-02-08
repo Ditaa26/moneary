@@ -10,7 +10,7 @@ if (!isset($_SESSION['user_id'])) {
 $user_id = $_SESSION['user_id'];
 $user_nama = $_SESSION['user_nama'];
 
-$sql = "SELECT * FROM catatan WHERE akun_id = ? ORDER BY tanggal_dibuat DESC";
+$sql = "SELECT * FROM catatan WHERE akun_id = ? ORDER BY created_at DESC";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("i", $user_id);
 $stmt->execute();
@@ -23,6 +23,7 @@ while ($row = $result->fetch_assoc()) {
 ?>
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,34 +32,36 @@ while ($row = $result->fetch_assoc()) {
     <link rel="stylesheet" href="buku.css">
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
+
 <body>
-<header>
-    <a href="home.php" class="back-button">←</a>
-    <div class="header-center">
-        <h1>Buku Catatan</h1>
-    </div>
-    <div class="logo-container">
-        <img src="logo.png" alt="Logo MONEARY">
-    </div>
-</header>
-
-<div class="container">
-    <?php if (count($catatanList) === 0): ?>
-        <div class="no-data-message">
-            <p>Belum ada catatan keuangan. Silakan tambahkan catatan baru.</p>
+    <header>
+        <a href="home.php" class="back-button">←</a>
+        <div class="header-center">
+            <h1>Buku Catatan</h1>
         </div>
-    <?php else: ?>
-        <?php foreach ($catatanList as $catatan): ?>
-            <a class="card" href="detail.php?id=<?= $catatan['id'] ?>">
-                <div><?= htmlspecialchars($catatan['nama']) ?></div>
-                <div class="card-arrow">→</div>
-            </a>
-        <?php endforeach; ?>
-    <?php endif; ?>
-</div>
+        <div class="logo-container">
+            <img src="logo.png" alt="Logo MONEARY">
+        </div>
+    </header>
 
-<script>
-    lucide.createIcons();
-</script>
+    <div class="container">
+        <?php if (count($catatanList) === 0): ?>
+            <div class="no-data-message">
+                <p>Belum ada catatan keuangan. Silakan tambahkan catatan baru.</p>
+            </div>
+        <?php else: ?>
+            <?php foreach ($catatanList as $catatan): ?>
+                <a class="card" href="detail.php?id=<?= $catatan['id'] ?>">
+                    <div><?= htmlspecialchars($catatan['nama_catatan']) ?></div>
+                    <div class="card-arrow">→</div>
+                </a>
+            <?php endforeach; ?>
+        <?php endif; ?>
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
+
 </html>

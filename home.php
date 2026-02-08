@@ -60,19 +60,19 @@ if ($selected_catatan_id == 'all') {
     $totalPengeluaran = $resultPengeluaran->fetch_assoc()['total'] ?? 0;
 
     // Get selected catatan name
-    $sqlCatatanName = "SELECT nama FROM catatan WHERE id = ?";
+    $sqlCatatanName = "SELECT nama_catatan FROM catatan WHERE id = ?";
     $stmtCatatanName = $conn->prepare($sqlCatatanName);
     $stmtCatatanName->bind_param("i", $selected_catatan_id);
     $stmtCatatanName->execute();
     $resultCatatanName = $stmtCatatanName->get_result();
-    $catatanName = $resultCatatanName->fetch_assoc()['nama'] ?? '';
+    $catatanName = $resultCatatanName->fetch_assoc()['nama_catatan'] ?? '';
 }
 
 // Calculate saldo
 $saldo = $totalPemasukan - $totalPengeluaran;
 
 // Query to get catatan belonging to the logged-in user (for dropdown only)
-$sql = "SELECT * FROM catatan WHERE akun_id = ? ORDER BY tanggal_dibuat DESC";
+$sql = "SELECT * FROM catatan WHERE akun_id = ? ORDER BY created_at DESC";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("i", $user_id);
 $stmt->execute();
@@ -148,7 +148,7 @@ if (count($catatanList) == 1 && $_SESSION['selected_catatan_id'] == 'all') {
                     <option value="all" <?php echo $selected_catatan_id == 'all' ? 'selected' : ''; ?>>Semua Catatan</option>
                     <?php foreach ($catatanList as $catatan): ?>
                         <option value="<?php echo $catatan['id']; ?>" <?php echo $selected_catatan_id == $catatan['id'] ? 'selected' : ''; ?>>
-                            <?php echo htmlspecialchars($catatan['nama']); ?>
+                            <?php echo htmlspecialchars($catatan['nama_catatan']); ?>
                         </option>
                     <?php endforeach; ?>
                 </select>
